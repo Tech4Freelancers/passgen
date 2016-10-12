@@ -16,7 +16,7 @@ Download the file "passgen" to your computer.
 
 Run the command
 sudo mv /PATH/TO/THE/FILE/passgen /usr/bin/passgen
-This will allow you to run it as you would normally run any command-line program
+This will allow you to run it as you would normally run any command-line program.
 
 Run the command
 sudo chmod +x /usr/bin/passgen
@@ -24,7 +24,17 @@ sudo chmod +x /usr/bin/passgen
 You can then run the program by typing passgen in your terminal
 
 OS X
-
 Download the file "passgen" to your computer.
-Run the command
-sudo chmod +x /PATH/TO/THE/FILE/passgen
+Run the commands
+sudo cp /PATH/TO/THE/FILE/passgen /usr/local/bin/passgen
+sudo chmod +x /usr/local/bin/passgen
+
+This will allow you to run the program as you would any other command-line program.
+
+Windows
+No need to install. Just run the passgen file in your Python interpreter.
+
+Future additions
+- Support for command-line arguments and non-interactive operation
+- Windows executable
+- GUI front-end with support for copying the generated password
