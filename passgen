@@ -1,0 +1,92 @@
+#!/usr/bin/python
+#Password generator application written in Python.
+#Written by Andrea Luciano Damico and released under the MIT license.
+#----------------------------------------------------------------------
+
+import os, sys, random
+#Initialization of variables
+answer =0
+#answer1=''
+alphabet="abcdefghijklmnopqrstuvwxyz"
+alphabetlower="abcdefghijklmnopqrstuvwxyz"
+alphabetUpper="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+alphabetNumbers="0123456789"
+alphabetSpecial="!;.,-_@?%$"
+password=[]
+selector = 0
+
+#Functions
+#def question():
+#	answer = repr(raw_input("Would you like your password to be case-sensitive? (y/n) (Default:n)"))
+
+
+
+
+#Code
+print ("Password generator version 1.0")
+print ("Written by Andrea Luciano Damico and released under the MIT license.")
+print ("This program will generate a random, cryptographically secure password for use with local computer and web accounts.")
+#print "Would you like your password to be case-sensitive? (y/n) (Default: n)"
+while 1:
+	answer=raw_input("Would you like your password to be case-sensitive? (y/n) (Default:n)")
+	if answer == "y":
+		print ("The password will contain uppercase characters.")
+		alphabet = alphabetlower + alphabetUpper
+		answer =""
+		break
+		
+	elif answer == "n" or answer == "":
+		print ("The password will NOT contain uppercase characters.")
+		alphabet = alphabetlower
+		answer = ""
+		break
+	else:
+		print ("Please only answer y or n.")
+
+while 1:
+	answer = raw_input("Would you like your password to contain numbers? (y/n) (Default:n)")
+	if answer == "y":
+		print ("The password will contain numbers.")
+		alphabet = alphabet + alphabetNumbers
+		answer =""
+		break
+		
+	elif answer == "n" or answer == "":
+		print ("The password will NOT contain numbers.")
+		answer = ""
+		break
+	else:
+		print ("Please only answer y or n.")
+
+while 1:
+	answer = raw_input("Would you like your password to contain special characters? (y/n) (Default:n)")
+	if answer == "y":
+		print ("The password will contain special characters.")
+		alphabet = alphabet + alphabetSpecial
+		answer =""
+		break
+		
+	elif answer == "n" or answer == "":
+		print ("The password will NOT contain numbers.")
+		answer = ""
+		break
+	else:
+		print ("Please only answer y or n.")
+
+
+while 1:
+	length = raw_input("How long do you want your password to be? (4..255) (Default:16)")
+	if length == "":
+		length =int(16)
+		break
+	elif int(length) in range(4,255):
+		length = int(length)
+		break
+	else:
+		print ("Invalid length.")
+print "Your password will be",length,"characters long."
+random.seed(os.urandom(random.randint(1,65535)))
+for i in range (1,length):
+	sys.stdout.write(random.choice(alphabet))
+print ""
+exit(0)
