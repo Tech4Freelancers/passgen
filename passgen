@@ -3,30 +3,21 @@
 #Written by Andrea Luciano Damico and released under the MIT license.
 #----------------------------------------------------------------------
 
+#Libraries to import
 import os, sys, random
+
 #Initialization of variables
 answer =0
-#answer1=''
 alphabet="abcdefghijklmnopqrstuvwxyz"
 alphabetlower="abcdefghijklmnopqrstuvwxyz"
 alphabetUpper="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 alphabetNumbers="0123456789"
 alphabetSpecial="!;.,-_@?%$"
-password=[]
-selector = 0
-
-#Functions
-#def question():
-#	answer = repr(raw_input("Would you like your password to be case-sensitive? (y/n) (Default:n)"))
-
-
-
 
 #Code
 print ("Password generator version 1.0")
 print ("Written by Andrea Luciano Damico and released under the MIT license.")
 print ("This program will generate a random, cryptographically secure password for use with local computer and web accounts.")
-#print "Would you like your password to be case-sensitive? (y/n) (Default: n)"
 while 1:
 	answer=raw_input("Would you like your password to be case-sensitive? (y/n) (Default:n)")
 	if answer == "y":
@@ -79,7 +70,7 @@ while 1:
 	if length == "":
 		length =int(16)
 		break
-	elif int(length) in range(4,255):
+	elif int(length) in range(4,256):
 		length = int(length)
 		break
 	else:

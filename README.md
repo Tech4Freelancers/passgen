@@ -38,3 +38,7 @@ Future additions
 - Support for command-line arguments and non-interactive operation
 - Windows executable
 - GUI front-end with support for copying the generated password
+
+Changelog
+1.0 - Initial commit
+1.01 - Code cleanup
